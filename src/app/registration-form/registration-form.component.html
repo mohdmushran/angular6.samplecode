@@ -1,0 +1,40 @@
+<!-- Page Content -->
+<div class="container">
+  
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="card ">
+          <div class="card-body">
+            <a routerLink="/login-registration">Go to login page</a>
+            <h3 class="card-title">Registration Form</h3>
+            <p class="lead">Please fill in the following registration form.</p>
+            <form (ngSubmit)="register(registrationForm.value)" [formGroup]="registrationForm">
+                <p-messages [(value)]="msgs"></p-messages>
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name" formControlName="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+              </div>
+              <button  type="submit" class="btn btn-default">Submit</button>
+              </form>
+          </div>
+        </div>
+        <!-- /.card -->
+  
+      </div>
+      <!-- /.col-lg-9 -->
+  
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  
+  

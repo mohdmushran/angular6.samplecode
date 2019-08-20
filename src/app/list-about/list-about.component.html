@@ -1,0 +1,53 @@
+<!-- Page Content -->
+<div class="container">
+    
+      <div class="row">
+    
+        <div class="col-lg-2">
+          <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-lg-10">
+    
+          
+          <div class="card ">
+            <div class="card-body">
+              <h3>About Listing</h3>
+                <!-- <a >Add About</a> -->
+              
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let row of listings">
+                        <td>{{ row.title }}</td>
+                        <td>{{ row.description }}</td>
+                        <td>{{ row.image }}</td>
+                        <td>{{ row.date }}</td>
+                        <td>
+                            <a routerLink="/edit-about" class="btn btn-link">Edit</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+            </div>
+          </div>
+          <!-- /.card -->
+    
+        </div>
+        <!-- /.col-lg-9 -->
+    
+      </div>
+      
+    </div>
+    <!-- /.container -->
+    
+    
+    

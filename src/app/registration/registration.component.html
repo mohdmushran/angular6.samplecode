@@ -1,0 +1,44 @@
+<!-- Page Content -->
+<div class="container">
+  
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="card ">
+          <div class="card-body">
+
+            <h3 class="card-title">Registration Form</h3>
+            <p class="lead">Please fill in the following registration form.</p>
+            <form (ngSubmit)="registration(registrationForm.value)" [formGroup]="registrationForm">
+                <p-messages [(value)]="msgs"></p-messages>
+              <div class="form-group">
+                  <label for="first_name">First Name:</label>
+                  <input type="text" class="form-control" id="first_name" formControlName="first_name">
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" formControlName="last_name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" formControlName="email">
+              </div>
+              <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="text" class="form-control" id="image" formControlName="image">
+              </div>
+              <button  type="submit" class="btn btn-default">Submit</button>
+              </form>
+          </div>
+        </div>
+        <!-- /.card -->
+  
+      </div>
+      <!-- /.col-lg-9 -->
+  
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  
+  

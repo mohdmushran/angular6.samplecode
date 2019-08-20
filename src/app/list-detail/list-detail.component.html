@@ -1,0 +1,63 @@
+<!-- Page Content -->
+<div class="container">
+    
+      <div class="row">
+    
+        <div class="col-lg-2">
+          <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-lg-10">
+    
+          <div class="card ">
+            <div class="card-body">
+              <h3>User Listing</h3>
+                <!-- <a routerLink="/">Add Resume</a> -->
+                
+                <div class="clearfix"></div>
+                <input type="textbox" [(ngModel)]="keyword" class="form-control" id="search" placeholder="Search">
+                <button  type="search" (click)="search()" class="btn btn-primary">Search</button>
+
+                <button  type="search" (click)="resetsearch()" class="btn btn-warning">Reset Search</button>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngIf="listings">
+                      
+                      <tr *ngFor="let info of listings; let i=index">
+                        <td>{{ info.name }}</td>
+                        <td>{{ info.email }}</td>
+                        <td>{{ info.mobile }}</td>
+                        <td>{{ info.address }}</td>
+                        <td>
+                          <a href="javascript:void(0)" (click)="delete(info, i)" class="btn btn-link">Delete</a>
+                          <!-- <a routerLink="/edit-detail/{{ info.id }}" class="btn btn-link">Edit</a> -->
+                          <a href="{{ pdfWebhook }}{{ info.id }}" target="_blank" class="btn btn-link">Download PDF</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog>
+                  <p-growl [(value)]="msgs"></p-growl>
+                  <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+            </div>
+          </div>
+          <!-- /.card -->
+    
+        </div>
+        <!-- /.col-lg-9 -->
+    
+      </div>
+      
+    </div>
+    <!-- /.container -->
+    
+    
+    

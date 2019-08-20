@@ -1,0 +1,59 @@
+<!-- Page Content -->
+<div class="container">
+  
+    <div class="row">
+  
+      
+      <div class="col-lg-10">
+  
+        <div class="card ">
+          <div class="card-body">
+            <h3>Information Listing</h3>
+              
+              
+
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Gender</th>
+                      <th>DOB</th>
+                      <th>Country</th>
+                      <th>State</th>
+                      <th>City</th>
+                      <th>Action</th>                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let info of listings; let i=index">
+                      <td>{{ info.name }}</td>
+                      <td>{{ info.gender }}</td>
+                      <td>{{ info.dob }}</td>
+                      <td>{{ info.country }}</td>
+                      <td>{{ info.state }}</td>
+                      <td>{{ info.city }}</td>
+                      <td>
+                        <a href="javascript:void(0)" (click)="delete(info, i)" class="btn btn-link">Delete</a>
+                        <a routerLink="/edit-information/{{ info.id }}" class="btn btn-link">Edit</a>
+                        <a href="{{ information_pdf_webhook }}{{ info.id }}" target="_blank" class="btn btn-link">Download PDF</a>
+                      </td> 
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425"></p-confirmDialog> -->
+                <!-- <p-growl [(value)]="msgs"></p-growl> -->
+                <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+          </div>
+        </div>
+        <!-- /.card -->
+  
+      </div>
+      <!-- /.col-lg-9 -->
+  
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  
+  

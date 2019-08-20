@@ -1,0 +1,50 @@
+<!-- Page Content -->
+<div class="container">
+    
+      <div class="row">
+    
+        <!-- <div class="col-lg-4">
+          <p-calendar [inline]="true"></p-calendar>
+        </div> -->
+        <div class="col-lg-8">
+    
+          
+          <div class="card ">
+            <div class="card-body">
+                <a routerLink="/">Add Business</a>
+              
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Business Name</th>
+                        <th>Address</th>
+                        <th>Mobile Number</th>
+                        <th>Pin Code</th>
+                        <th>Gender</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let row of listings">
+                        <td>{{ row.business_name }}</td>
+                        <td>{{ row.address }}</td>
+                        <td>{{ row.mobile_number }}</td>
+                        <td>{{ row.pin_code }}</td>
+                        <td>{{ row.gender }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+            </div>
+          </div>
+          <!-- /.card -->
+    
+        </div>
+        <!-- /.col-lg-9 -->
+    
+      </div>
+      
+    </div>
+    <!-- /.container -->
+    
+    
+    

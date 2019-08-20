@@ -1,0 +1,50 @@
+<!-- Page Content -->
+<div class="container">
+    
+      <div class="row">
+    
+        <!-- <div class="col-lg-4">
+          <p-calendar [inline]="true"></p-calendar>
+        </div> -->
+        <div class="col-lg-8">
+    
+          
+          <div class="card ">
+            <div class="card-body">
+                <!-- <a routerLink="/list-detail">Go to listing</a> -->
+              <h3 class="card-title">Edit Form</h3>
+              <p class="lead">Please fill this edit form.</p>
+              <form (ngSubmit)="getInfo(editForm.value)" [formGroup]="editForm">
+                  <p-messages [(value)]="msgs"></p-messages>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" class="form-control" id="email" formControlName="email">
+                </div>
+                <div class="form-group">
+                  <label for="mobile">Mobile:</label>
+                  <input type="text" class="form-control" id="mobile" formControlName="mobile">
+                </div>
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <textarea class="form-control" id="address" name="address" formControlName="address"></textarea>
+                </div>
+                <button  type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+          </div>
+          <!-- /.card -->
+    
+        </div>
+        <!-- /.col-lg-9 -->
+    
+      </div>
+      
+    </div>
+    <!-- /.container -->
+    
+    
+    

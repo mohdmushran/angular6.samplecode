@@ -1,0 +1,61 @@
+<!-- Page Content -->
+<div class="container">
+  
+    <div class="row">
+      <div class="col-lg-2">
+          <app-side-menu></app-side-menu>
+        </div>
+
+      <div class="col-lg-10">
+        <div class="card ">
+          <div class="card-body">
+              <!-- <a routerLink="/list-job">Go to job listing</a> -->
+            <h3 class="card-title">Job Form</h3>
+            <p class="lead">Please fill in the following Job form.</p>
+            <form (ngSubmit)="register(jobForm.value)" [formGroup]="jobForm">
+                <p-messages [(value)]="msgs"></p-messages>
+              <div class="form-group">
+                  <label for="job_title">Job Title:</label>
+                  <input type="text" class="form-control" id="job_title" formControlName="job_title">
+              </div>
+              <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea class="form-control" id="job_description" formControlName="job_description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="salary_minimum">Salary Minimum:</label>
+                <input type="text" class="form-control" id="salary_minimum" formControlName="salary_minimum">
+              </div>
+              <div class="form-group">
+                <label for="salary_maximum">Salary Maximum:</label>
+                <input type="text" class="form-control" id="salary_maximum" formControlName="salary_maximum">
+              </div>
+              <div class="form-group">
+                <label for="job_location">Job Location:</label>
+                <input type="text" class="form-control" id="job_location" formControlName="job_location">
+              </div>
+              <div class="form-group">
+                <label for="job_category">Job Category:</label>
+                <input type="text" class="form-control" id="job_category" formControlName="job_category">
+              </div>
+              <div class="form-group">
+                <label for="joining_date">Joining Date:</label>
+                <p-calendar formControlName="joining_date" id="joining_date" ></p-calendar>
+                <!-- <input type="text" class="form-control" id="joining_date" formControlName="joining_date"> -->
+              </div>
+              <button  type="submit" class="btn btn-default">Submit</button>
+              </form>
+          </div>
+        </div>
+        <!-- /.card -->
+  
+      </div>
+      <!-- /.col-lg-9 -->
+  
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  
+  

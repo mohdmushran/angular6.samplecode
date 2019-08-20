@@ -1,0 +1,63 @@
+<!-- Page Content -->
+<div class="container">
+  
+    <div class="row">
+        <div class="col-lg-2">
+            <app-side-menu></app-side-menu>
+          </div>
+  
+      
+      <div class="col-lg-10">
+  
+        
+        <div class="card ">
+          <div class="card-body">
+              <h3>Vehicle Listing</h3>
+            
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                        <th>Vehicle Name</th>
+                        <th>Description</th>
+                        <th>Year</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let vehicle of listings; let i=index">
+                      <td>{{ vehicle.vehicle_name }}</td>
+                      <td>{{ vehicle.description }}</td>
+                      <td>{{ vehicle.year }}</td>
+                      <td>{{ vehicle.make }}</td>
+                      <td>{{ vehicle.model }}</td>
+                      <td>{{ vehicle.country }}</td>
+                      <td>{{ vehicle.state }}</td>
+                      <td>{{ vehicle.city }}</td>
+                      <td>
+                        <!-- <a href="javascript:void(0)" (click)="delete(vehicle, i)" class="btn btn-link">Delete</a> -->
+                        <a routerLink="/edit-vehicle/{{ vehicle.id }}" class="btn btn-link">Edit</a>
+                        <!-- <a href="{{ vehicle_pdf_webhook }}{{ vehicle.id }}" target="_blank" class="btn btn-link">Download PDF</a> -->
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+          </div>
+        </div>
+        <!-- /.card -->
+  
+      </div>
+      <!-- /.col-lg-9 -->
+  
+    </div>
+    
+  </div>
+  <!-- /.container -->
+  
+  
+  

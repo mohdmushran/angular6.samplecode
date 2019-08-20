@@ -1,0 +1,61 @@
+<!-- Page Content -->
+<div class="container">
+    
+      <div class="row">
+          <div class="col-lg-2">
+              <app-side-menu></app-side-menu>
+            </div>
+        
+        <div class="col-lg-10">
+    
+          
+          <div class="card ">
+            <div class="card-body">
+                <h3>Job Listing</h3>
+                <!-- <a routerLink="/">Add Job</a> -->
+              
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                          <th>Job Title</th>
+                          <th>Job Description</th>
+                          <th>Salary Minimum</th>
+                          <th>Salary Maximum</th>
+                          <th>Job Location</th>
+                          <th>Job Category</th>
+                          <th>Joining Date</th>
+                          <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let job of listings; let i=index">
+                        <td>{{ job.job_title }}</td>
+                        <td>{{ job.job_description }}</td>
+                        <td>{{ job.salary_minimum }}</td>
+                        <td>{{ job.salary_maximum }}</td>
+                        <td>{{ job.job_location }}</td>
+                        <td>{{ job.job_category }}</td>
+                        <td>{{ job.joining_date }}</td>
+                        <td>
+                            <!-- <a href="javascript:void(0)" (click)="delete(job, i)" class="btn btn-link">Delete</a> -->
+                            <!-- <a routerLink="/edit-job/{{ job.id }}" class="btn btn-link">Edit</a> -->
+                            <a href="{{ pdfWebhook }}{{ job.id }}" target="_blank" class="btn btn-link">Download PDF</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p-paginator [rows]="rows" [totalRecords]="totalRecords" (onPageChange)="paginate($event)"></p-paginator>
+            </div>
+          </div>
+          <!-- /.card -->
+    
+        </div>
+        <!-- /.col-lg-9 -->
+    
+      </div>
+      
+    </div>
+    <!-- /.container -->
+    
+    
+    
